@@ -11,6 +11,18 @@ def isReleaseBuild() {
     return version.contains("SNAPSHOT") == false
 }
 
+plugins {
+  id "org.sonarqube" version "3.1.1"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "juanvibolufer_DrawableView"
+    property "sonar.organization", "juanvibolufer"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
+
 allprojects {
     version = VERSION_NAME
     group = GROUP
